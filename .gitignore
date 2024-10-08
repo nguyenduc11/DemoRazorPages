@@ -1,0 +1,43 @@
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider files
+.idea/
+
+# ASP.NET Core temporary files
+project.lock.json
+project.fragment.lock.json
+*.db
+*.db-journal
+
+# Node.js packages
+node_modules/
+
+# Auto-generated files
+*.csproj.user
+*.sln.ide
+
+# Publish output
+publish/
+
+# Other files
+*.log
+*.pdb
+*.mdb
+*.cache
+
+# Environment variables
+.env
+
+# Visual Studio Code settings
+.vscode/
