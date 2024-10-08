@@ -1,0 +1,39 @@
+name: .NET Core
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    # Use Windows instead of Ubuntu
+    runs-on: windows-latest
+
+    steps:
+      # Check out the repository's code
+      - uses: actions/checkout@v2
+
+      # Set up .NET Core on a Windows runner
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "8.x" # Change this to the version you're using
+
+      # Restore dependencies
+      - name: Restore dependencies
+        run: dotnet restore
+
+      # Build the project
+      - name: Build the project
+        run: dotnet build --configuration Release
+
+      # Run tests (optional, you can skip if not needed)
+      - name: Run tests
+        run: dotnet test --configuration Release
+
+      # Publish the app (build for release)
+      - name: Publish the app
+        run: dotnet publish --configuration Release --output ./publish
+
+      # Optional: You can add steps here to deploy to Azure or Railway
